@@ -50,6 +50,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(bot.webhookCallback('/webhook'));
+app.use(express.static(__dirname));
 
 // 网页调用这个接口发消息
 app.post('/api/chat', (req, res) => {
